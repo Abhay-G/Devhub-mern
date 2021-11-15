@@ -23,8 +23,14 @@
         @apply text-lg;
     }
 }
+body {
+    min-height: 100vh;
+}
 .font-2 {
     font-family: 'Josefin Sans', sans-serif;
+}
+.my_height {
+    height: calc(100vh - 10.88vh);
 }
 .gradient_og {
     background: linear-gradient(

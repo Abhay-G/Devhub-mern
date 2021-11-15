@@ -13,7 +13,7 @@ const ImgCard = () => {
             </div>
             <div>
                 <h2 className='text-purple-300 '>Yo! Welcome to Devhub</h2>
-                <p className='text-grey-200'>
+                <p className='text-grey-300'>
                     Wishing you an awesome experience
                 </p>
             </div>

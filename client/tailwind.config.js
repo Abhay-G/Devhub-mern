@@ -20,7 +20,8 @@ module.exports = {
             },
             grey: {
                 100: '#EEEEEE',
-                200: '#A6A6A6',
+                200: '#EFF2FC',
+                300: '#A6A6A6',
             },
             white: '#fff',
         },
