@@ -14,10 +14,13 @@ const StepPhoneEmail = ({ changeStep }) => {
     return (
         <div className='relative'>
             <div className='mb-6'>
-                <ImgCard />
+                <ImgCard
+                    heading='Yo! Welcome to Devhub'
+                    subheading='  Wishing you an awesome experience'
+                />
             </div>
             <div className='phone_email_og container'>
-                <AuthChoice />
+                <AuthChoice changeStep={changeStep} />
                 <div className='flex mt-2'>
                     <button
                         className={`p-2 my-4 ml-2 rounded-lg text-white font-semibold ${

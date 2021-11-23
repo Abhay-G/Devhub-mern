@@ -1,16 +1,16 @@
-import React from 'react';
-import { BsTypeH1 } from 'react-icons/bs';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.scss';
-import { Navbar } from './components';
-import { Home, Login, Register, Authenticate, Activate, Rooms } from './pages';
-
-const isAuth = false;
-const user = {
-    activated: false,
-};
+import { Navbar, Loader } from './components';
+import { Home, Authenticate, Activate, Rooms, Room } from './pages';
+import { useSelector } from 'react-redux';
+import { useLoadingWithRefresh } from './hooks/useLoadingWithRefresh';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
-    return (
+    const { loading } = useLoadingWithRefresh();
+    return loading ? (
+        <Loader message='Loading in progress' />
+    ) : (
         <>
             <Navbar />
             <Routes>
@@ -27,15 +27,24 @@ const App = () => {
                     path='/rooms'
                     element={<ProtectedRoute component={<Rooms />} />}
                 />
+                <Route
+                    path='/room/:id'
+                    element={<ProtectedRoute component={<Room />} />}
+                />
             </Routes>
+            <ToastContainer />
         </>
     );
 };
 
 const GuestRoute = ({ component }) => {
+    const { isAuth } = useSelector((state) => state.auth);
+
     return isAuth ? <Navigate replace to='/rooms' /> : component;
 };
 const SemiProtectedRoute = ({ component }) => {
+    const { isAuth, user } = useSelector((state) => state.auth);
+
     return !isAuth ? (
         <Navigate replace to='/authenticate' />
     ) : isAuth && !user.activated ? (
@@ -45,6 +54,7 @@ const SemiProtectedRoute = ({ component }) => {
     );
 };
 const ProtectedRoute = ({ component }) => {
+    const { isAuth, user } = useSelector((state) => state.auth);
     return !isAuth ? (
         <Navigate replace to='/authenticate' />
     ) : isAuth && !user.activated ? (

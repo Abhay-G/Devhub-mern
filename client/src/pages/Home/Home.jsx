@@ -9,7 +9,10 @@ const Home = () => {
     return (
         <div className='relative h-full'>
             <div className='mb-8'>
-                <ImgCard />
+                <ImgCard
+                    heading='Yo! Welcome to Devhub'
+                    subheading='  Wishing you an awesome experience'
+                />
             </div>
             <div>
                 <Card

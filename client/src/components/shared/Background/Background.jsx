@@ -18,7 +18,11 @@ const Background = () => {
                 src='/images/rocket.png'
                 alt=''
             />
-            <img className='absolute cube_og' src='/images/cube.png' alt='' />
+            <img
+                className='absolute cube_bg_og'
+                src='/images/cube.png'
+                alt=''
+            />
         </>
     );
 };

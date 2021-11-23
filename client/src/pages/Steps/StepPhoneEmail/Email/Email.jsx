@@ -4,7 +4,7 @@ import { Card, TextInput } from '../../../../components';
 import { BsArrowRightCircle } from 'react-icons/bs';
 import { GiMailbox } from 'react-icons/gi';
 
-const Email = () => {
+const Email = ({ changeStep }) => {
     const [email, setEmail] = useState('');
     return (
         <div>
@@ -17,15 +17,15 @@ const Email = () => {
                     // placeholder='@@@@@@'
                     onChange={(e) => setEmail(e.target.value)}
                 />
-                <Link
+                <button
                     className='gradient_og transition duration-200 ease-in-out flex items-center py-4 px-8 text-white rounded-xl mb-3 hover:opacity-80'
-                    to='/autheticate'
+                    onClick={changeStep}
                 >
                     <span className='mr-4 text-base font-semibold uppercase'>
                         Send OTP
                     </span>
                     <BsArrowRightCircle size='1.5rem' />
-                </Link>
+                </button>
                 <div className='px-10'>
                     <p className='text-grey-300 text-base leading-snug'>
                         By entering your email you are agreeing to our Terms of

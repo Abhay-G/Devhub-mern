@@ -1,0 +1,45 @@
+.heading_og {
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        height: 4px;
+        width: 60%;
+        border-radius: 20px;
+        background: linear-gradient(40deg, #6666b3, #ff6b6b);
+    }
+}
+.rooms_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.blob_blue_og {
+    top: 0%;
+    left: 0%;
+    z-index: -1;
+}
+.blob_purple_og {
+    bottom: 0%;
+    right: 0%;
+    z-index: -1;
+}
+.redvase_og {
+    width: 80px;
+    top: 20%;
+    right: 20%;
+    z-index: -1;
+}
+.cube_og {
+    width: 150px;
+    top: 50%;
+    left: 20%;
+    z-index: -1;
+}
+.vase1_og {
+    bottom: 10%;
+    right: 20%;
+    z-index: -1;
+}
